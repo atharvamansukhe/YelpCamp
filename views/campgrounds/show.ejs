@@ -2,28 +2,38 @@
     <div class="row">
         <div class="col-md-2">
             <a href="/campgrounds" class="btn btn-outline-secondary">
-                <<< </a>
+                < </a>
         </div>
-        <div class="col-md-6">
-            <h1 class="display-6">
+        <div class="col-md-8">
+            <h1 class="display-6 text-center text-dark">
                 <%=campground.title%>
             </h1>
-            <h2>
+            <h4 class="text-center text-secondary mb-3">
                 <%=campground.location%>
-            </h2>
+            </h4>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2">
             <a href="/campgrounds/<%= campground._id %>/edit"
-                class="btn btn-outline-warning me-3">Edit</a>
+                class="btn btn-outline-warning me-3 mb-3">Edit</a>
             <form action="/campgrounds/<%= campground._id %>?_method=DELETE"
                 method="POST" style="display: inline-block;">
-                <p><button class="btn btn-outline-danger">Delete</button> </p>
+                <button class="btn btn-outline-danger mb-3">Delete</button>
             </form>
         </div>
     </div>
-
-    <img src="<%= campground.image %>" alt=""
-        class="img-fluid border rounded shadow mb-5 bg-body rounded">
-    <p class="lead">
-        <%= campground.description %>
+    </div>
+    <p class="text-primary text-center mb-5">Price per night : $<%=
+            campground.price %>
     </p>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="<%= campground.image %>" alt=""
+                class="img-fluid border rounded shadow mb-5 bg-body rounded">
+        </div>
+        <div class="col-md-6 d-flex text-center flex-wrap">
+            <p class="lead mb-5">
+                <%= campground.description %>
+            </p>
+        </div>
+    </div>
+    </div>

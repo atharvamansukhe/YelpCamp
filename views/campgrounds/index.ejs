@@ -1,30 +1,24 @@
 <% layout('./layouts/boilerplate') %>
 
-    <h1 class="display-5 border-bottom">All Campgrounds</h1>
+    <h1 class="display-5 text-center mb-5">All Campgrounds</h1>
+    <div class="container-fluid d-flex row justify-content-around">
+        <% for(let campground of campgrounds) { %>
 
-    <% for(let campground of campgrounds) { %>
-
-        <div class="card mb-3 shadow mb-5 bg-body rounded">
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="/campgrounds/<%= campground._id %> "><img
-                            src="<%= campground.image %> " class="img-fluid"
-                            alt="" style="height: 200px; width: 400px;"></a>
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= campground.title %>
-                        </h5>
-                        <p class="card-text lead">
-                            <%= campground.description %>
-                        </p>
-                        <p class="card-text text-muted">
-                            <%= campground.location %>
-                        </p>
-                    </div>
+            <div
+                class="card shadow mb-5 bg-body rounded col-xl-2 col-lg-3 col-md-4 me-3 ms-5 px-0">
+                <a href="/campgrounds/<%= campground._id %> "><img
+                        src="<%= campground.image %> " class="img-fluid" alt=""
+                        style="height: 200px; width: 100%;"></a>
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        <%= campground.title %>
+                    </h5>
+                    <p class="card-text text-muted text-center">
+                        <%= campground.location %>
+                    </p>
                 </div>
             </div>
-        </div>
 
-        <% } %>
+            <% } %>
+
+    </div>
