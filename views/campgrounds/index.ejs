@@ -1,19 +1,20 @@
 <% layout('./layouts/boilerplate') %>
 
     <h1 class="display-5 text-center mb-5">All Campgrounds</h1>
-    <div class="container-fluid d-flex row justify-content-around">
+    <div
+        class="container-fluid row justify-content-around row-cols-1 row-cols-md-2 g-4">
         <% for(let campground of campgrounds) { %>
 
-            <div
-                class="card shadow mb-5 bg-body rounded col-xl-2 col-lg-3 col-md-4 me-3 ms-5 px-0">
+            <div class="card shadow-sm mb-5 bg-body rounded col mx-3 px-0"
+                style="width: 250px;">
                 <a href="/campgrounds/<%= campground._id %> "><img
                         src="<%= campground.image %> " class="img-fluid" alt=""
                         style="height: 200px; width: 100%;"></a>
-                <div class="card-body">
-                    <h5 class="card-title text-center">
+                <div class="card-body alert-secondary my-0">
+                    <h5 class="card-title text-center fw-light">
                         <%= campground.title %>
                     </h5>
-                    <p class="card-text text-muted text-center">
+                    <p class="card-text text-muted text-center fst-italic">
                         <%= campground.location %>
                     </p>
                 </div>
