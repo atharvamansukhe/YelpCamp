@@ -5,7 +5,9 @@
             <%= err.message %>
         </h4>
         <hr>
+        <% if(process.env.NODE_ENV !=='production') { %> 
         <p class="mb-0">
             <%= err.stack %>
         </p>
+        <% } %> 
     </div>
